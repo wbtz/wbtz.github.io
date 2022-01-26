@@ -2,7 +2,7 @@
 
 ### Tezos on-chain website viewer
 
-By Eyal Gruss
+By [Eyal Gruss](https://eyalgruss.com)
 
 Edit and deploy your website: [j.mp/mywebzos](https://j.mp/mywebzos)
 

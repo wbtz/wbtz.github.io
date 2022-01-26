@@ -13,6 +13,10 @@
                 height: 100vh;
                 width: 100vw;
             }
+            @keyframes rotate {
+                from {transform: rotate(180deg);}
+                to {transform: rotate(360deg);}
+            }
         </style>
     </head>
     <body>
@@ -36,7 +40,11 @@
                                 headers: {'Content-Type': 'application/json'},
                                 body: JSON.stringify({text: text})
                             })
-                            .then(response => response.text()).then(text => {document.getElementById('dynamic').srcdoc = text})
+                            .then(response => response.text()).then(text => {
+                                document.body.innerHTML = text
+                                document.body.style.margin = '2rem'
+                                document.body.style.animation = 'rotate 0.5s'
+                            })
                         })
                 })
         </script>
