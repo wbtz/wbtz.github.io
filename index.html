@@ -16,13 +16,29 @@
         </style>
     </head>
     <body>
-    <iframe id='dynamic'></iframe>
+        <iframe id='dynamic'></iframe>
         <script>
             var addr = window.location.hash.slice(1)
             if (!addr) addr = window.location.search.slice(1)
-            fetch('https://api.tzkt.io/v1/contracts/'+addr+'/storage')
-                .then(response => response.json())
+            fetch('https://api.tzkt.io/v1/contracts/' + addr + '/storage')
+                .then(response => {
+                    if (!response.ok) throw new Error()
+                    return response.json()
+                })
                 .then(data => document.getElementById('dynamic').src = data)
+                .catch(error => {
+                    const help = document.createElement('div')
+                    fetch('https://raw.githubusercontent.com/wbtz/wbtz.github.io/main/README.md')
+                        .then(response => response.text())
+                        .then(text => {
+                            fetch('https://api.github.com/markdown', {
+                                method: 'POST',
+                                headers: {'Content-Type': 'application/json'},
+                                body: JSON.stringify({text: text})
+                            })
+                            .then(response => response.text()).then(text => {document.getElementById('dynamic').srcdoc = text})
+                        })
+                })
         </script>
     </body>
 </html>
