@@ -45,15 +45,11 @@
                     })
             }
 
-            function grab_title() {
-                var title = this.title
-                if (title) document.title = title
-            }
-
             function render(data) {
                 var iframe = document.getElementsByTagName('iframe')[0]
-                iframe.onload = grab_title
                 iframe.src = data
+                title = decodeURI(data).split(/<\/?title>/)[1]
+                if (title) document.title = title
             }
 
             fetch(url1)
