@@ -3,6 +3,7 @@
     <head>
         <meta charset='UTF-8'>
         <title>Webzos</title>
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
         <style>
             body {
                 margin: 0;
@@ -20,33 +21,55 @@
         </style>
     </head>
     <body>
-        <iframe id='dynamic'></iframe>
+        <iframe></iframe>
         <script>
-            var addr = window.location.hash.slice(1)
-            if (!addr) addr = window.location.search.slice(1)
-            fetch('https://api.tzkt.io/v1/contracts/' + addr + '/storage')
+            var addr = (window.location.search || window.location.hash).slice(1)
+            var url1 = 'https://api.tzkt.io/v1/contracts/' + addr + '/storage'
+            var url2 = 'https://api.better-call.dev/v1/contract/mainnet/' + addr + '/storage/raw'
+
+            function help() {
+                const help = document.createElement('div')
+                fetch('https://raw.githubusercontent.com/wbtz/wbtz.github.io/main/README.md')
+                    .then(response => response.text())
+                    .then(text => {
+                        fetch('https://api.github.com/markdown', {
+                            method: 'POST',
+                            headers: {'Content-Type': 'application/json'},
+                            body: JSON.stringify({text: text})
+                        })
+                        .then(response => response.text()).then(text => {
+                            document.body.innerHTML = text
+                            document.body.style.margin = '2rem'
+                            document.body.style.animation = 'rotate 0.5s'
+                        })
+                    })
+            }
+
+            function grab_title() {
+                var title = this.title
+                if (title) document.title = title
+            }
+
+            function render(data) {
+                var iframe = document.getElementsByTagName('iframe')[0]
+                iframe.onload = grab_title
+                iframe.src = data
+            }
+
+            fetch(url1)
                 .then(response => {
-                    if (!response.ok) throw new Error()
+                    if (!response.ok) throw 'Error1'
                     return response.json()
                 })
-                .then(data => document.getElementById('dynamic').src = data)
-                .catch(error => {
-                    const help = document.createElement('div')
-                    fetch('https://raw.githubusercontent.com/wbtz/wbtz.github.io/main/README.md')
-                        .then(response => response.text())
-                        .then(text => {
-                            fetch('https://api.github.com/markdown', {
-                                method: 'POST',
-                                headers: {'Content-Type': 'application/json'},
-                                body: JSON.stringify({text: text})
-                            })
-                            .then(response => response.text()).then(text => {
-                                document.body.innerHTML = text
-                                document.body.style.margin = '2rem'
-                                document.body.style.animation = 'rotate 0.5s'
-                            })
-                        })
-                })
+                .then(data => render(data))
+                .catch(e => fetch(url2)
+                    .then(response => {
+                        if (!response.ok) throw 'Error2'
+                        return response.json()
+                    })
+                    .then(data => render(data.split('"')[1]))
+                    .catch(e => help())
+                )
         </script>
     </body>
 </html>
