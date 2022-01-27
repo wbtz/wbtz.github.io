@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="32">
+    <defs>
+        <linearGradient id="logo-gradient" x1="50%" y1="0%" x2="50%" y2="100%" >
+            <stop offset="0%" stop-color="#FF5FFF">
+                <animate attributeName="stop-color" values="#FF5FFF; #FFFF89; #FF5FFF" dur="1s" repeatCount="indefinite" />
+            </stop>
+            <stop offset="100%" stop-color="#FFFF89">
+                <animate attributeName="stop-color" values="#FFFF89; #FF5FFF; #FFFF89" dur="1s" repeatCount="indefinite" />
+            </stop>
+        </linearGradient>
+    </defs>
+    <a id="a"><text x="8" y="8" fill="url('#logo-gradient')" font-family="monospace" font-size="32" rotate="90">ꜩ</text></a>
+</svg>
