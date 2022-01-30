@@ -9,12 +9,6 @@
             body {
                 margin: 0;
             }
-            iframe {
-                display: block;
-                border: none;
-                height: 100vh;
-                width: 100vw;
-            }
             @keyframes rotate {
                 from {transform: rotate(180deg);}
                 to {transform: rotate(360deg);}
@@ -22,9 +16,8 @@
         </style>
     </head>
     <body>
-        <iframe></iframe>
         <script>
-            var addr = (window.location.search || window.location.hash).slice(1)
+            var addr = (window.location.search || window.location.hash).slice(1).trim()
             var url1 = 'https://api.tzkt.io/v1/contracts/' + addr + '/storage'
             var url2 = 'https://api.better-call.dev/v1/contract/mainnet/' + addr + '/storage/raw'
 
@@ -47,12 +40,11 @@
             }
 
             function render(data) {
-                var iframe = document.getElementsByTagName('iframe')[0]
                 if (!data.includes('%')) data = data.replace(/\s+/g, '').replace(/[0-9a-f]{2}/g, '%$&')
                 data = '<!' + decodeURIComponent(data).split('<!')[1]
-                iframe.srcdoc = data
-                title = data.split(/<\/?title>/)[1]
-                if (title) document.title = title
+                document.open("text/html", "replace")
+                document.write(data)
+                document.close()
             }
 
             fetch(url1)
