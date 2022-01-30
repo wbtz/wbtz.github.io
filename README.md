@@ -8,7 +8,7 @@ code: [https://github.com/wbtz/wbtz.github.io](https://github.com/wbtz/wbtz.gith
 
 by [Eyal Gruss](https://eyalgruss.com)
 
-Edit and deploy your website: [smartpy.io/ide?code=...](https://smartpy.io/ide?code=eJxVUU1vgzAMvSP1P3gnQN3gOnVQTep23g6Tpp4iA6aNFBIUG23dr19SQOucw1OeP@L3oofReQEe0Mt4AWTgcZPE0xpkhk9qfhxnPBYHZ8VjK_luk0CIjnpQSlstSmVMpl8TMb6ubVCHacUk2nDRXIRYuV6xeG1PmU_TtEPBndC3lGcZzFN7Rs8k9ST9w@P9JqnuXt4OH8f3V4jpfSAigkF7qsle74RdxIEE4V97ZEWLoX1VzhiIcq1vXHcJeHSTj6uyFoIzeYo1S64ql0fDnvmfsCi0iKKzWWI@m6V7SIWG0WBQmYJ1AtoGeywOpNRizHMwA7tOhRLJ0tnZdXZ088rfurgYGHnFLVn02mW3y8C2Xn8o0L_HL4kT)
+Edit and deploy your website: [smartpy.io/ide?code=...](https://smartpy.io/ide?code=eJxNUMtqxDAMvPsr1JMTSrPXUpKwsO25PRTKnoyTKBuDH8FSKOnX107SsroIj8bSzBg3h8hATkeeV9AENAshequJ4Au7n0AFzdUleI665_JFQKoBR1DKeMNKFYR2PPBc39snaNKiamFjqepWRlJhVMTR@FsRpZSifnh9v3xeP95gYmdbUecGVvtbgz4_UQ@pOWQN_aQjITcLj0_PCWTDFtv6tHdRnw5yF4a1FdewxKyCDCNMGDER9kkibrfS_fJfb5ZfZSvFrrxM9s0IktHNViflEnxgMD459tqhUrvXc_Knh0ElBhdyj@pYm@PZ4LtYjkQyrKhHr6MJxZ0KeGz@8i7FL0RTfQ8-)
 
 Notes: 
 - Storage is limited to 32 kB
