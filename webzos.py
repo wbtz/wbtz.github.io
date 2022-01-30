@@ -3,7 +3,7 @@ import smartpy as sp
 
 class Webzos(sp.Contract):
     def __init__(self):
-        webzos = sp.utils.bytes_of_string(r'''data:text/html;charset=utf-8,
+        webzos = sp.utils.bytes_of_string(r'''
 <!DOCTYPE html>
 <html lang=en>
 <head>
