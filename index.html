@@ -49,7 +49,7 @@
             function render(data) {
                 var iframe = document.getElementsByTagName('iframe')[0]
                 if (!data.includes('%')) data = data.replace(/\s+/g, '').replace(/[0-9a-f]{2}/g, '%$&')
-                data = decodeURIComponent(data)
+                data = '<!' + decodeURIComponent(data).split('<!', '')[1]
                 iframe.srcdoc = data
                 title = data.split(/<\/?title>/)[1]
                 if (title) document.title = title
