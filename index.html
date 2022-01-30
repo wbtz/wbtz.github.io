@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang='en' dir='ltr'>
+<html lang=en>
     <head>
-        <meta charset='UTF-8'>
+        <meta charset=utf-8>
+        <meta name=description content='Tezos on-chain website viewer'>
         <title>WEBZOS</title>
-        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+        <link rel=icon type=image/svg+xml href=favicon.svg>
         <style>
             body {
                 margin: 0;
@@ -47,8 +48,9 @@
 
             function render(data) {
                 var iframe = document.getElementsByTagName('iframe')[0]
+                if (data.startsWith('0x')) data = data.substr(2).replace(/\s+/g, '').replace(/[0-9a-f]{2}/g, '%$&')
                 iframe.src = data
-                title = decodeURI(data).split(/<\/?title>/)[1]
+                title = decodeURIComponent(data).split(/<\/?title>/)[1]
                 if (title) document.title = title
             }
 

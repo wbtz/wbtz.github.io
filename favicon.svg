@@ -9,5 +9,5 @@
             </stop>
         </linearGradient>
     </defs>
-    <a id="a"><text x="8" y="8" fill="url('#logo-gradient')" font-family="monospace" font-size="32" rotate="90">ꜩ</text></a>
+    <text x="8" y="8" fill="url('#logo-gradient')" font-family="monospace" font-size="32" rotate="90">ꜩ</text>
 </svg>
