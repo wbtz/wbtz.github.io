@@ -3,15 +3,8 @@ import smartpy as sp
 
 class Webzos(sp.Contract):
     def __init__(self):
-        html = r'''
-<!DOCTYPEhtml>
-<html lang=en>
-<meta charset=utf8>
-<title>WEBZOS</title>
-<body>
-CONTENT OF YOUR WEBSITE HERE
-'''
-        self.init(sp.utils.bytes_of_string(html.strip()))
+        html_hex = 'HEX DUMP OF YOUR HTML STARTING WITH 0x'
+        self.init(sp.bytes(html_hex))
 
 
 if 'templates' not in __name__:

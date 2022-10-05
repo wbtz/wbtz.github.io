@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
     <head>
-        <meta charset=utf-8>
-        <meta name=description content='Tezos on-chain website viewer'>
+        <meta charset="utf-8">
+        <meta name="description" content="Tezos on-chain website viewer">
         <title>WEBZOS</title>
-        <link rel=icon type=image/svg+xml href=favicon.svg>
+        <link rel="icon" type="image/svg+xml" href="favicon.svg">
         <style>
             body {
                 margin: 0;
@@ -17,7 +17,7 @@
     </head>
     <body>
         <script>
-            var addr = (window.location.search || window.location.hash).slice(1).trim()
+            var addr = (location.search || location.hash).slice(1).trim()
             var url1 = 'https://api.tzkt.io/v1/contracts/' + addr + '/storage'
             var url2 = 'https://api.better-call.dev/v1/contract/mainnet/' + addr + '/storage/raw'
 
@@ -42,9 +42,7 @@
             function render(data) {
                 if (!data.includes('%')) data = data.replace(/\s+/g, '').replace(/[0-9a-f]{2}/g, '%$&')
                 data = '<!' + decodeURIComponent(data).split('<!')[1]
-                document.open("text/html", "replace")
                 document.write(data)
-                document.close()
             }
 
             fetch(url1)
