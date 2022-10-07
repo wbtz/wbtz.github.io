@@ -17,7 +17,7 @@
     </head>
     <body>
         <script>
-            var addr = (location.search || location.hash).slice(1).trim()
+            var addr = (location.search || location.hash).slice(1).split(/[^\da-z]/i)[0]
             var url1 = 'https://api.tzkt.io/v1/contracts/' + addr + '/storage'
             var url2 = 'https://api.better-call.dev/v1/contract/mainnet/' + addr + '/storage/raw'
 
@@ -40,9 +40,9 @@
             }
 
             function render(data) {
-                array = new Uint8Array(data.match(/../g).map(x => parseInt(x, 16)))
-                content = (new TextDecoder('cp1252')).decode(array)
-                if (!content.includes('<meta charset=cp1252>')) content = (new TextDecoder()).decode(array)
+                var array = new Uint8Array(data.match(/../g).map(x => parseInt(x, 16)))
+                var content = (new TextDecoder('cp1252')).decode(array)
+                if (!content.toLowerCase().includes('<meta charset=cp1252>')) content = (new TextDecoder()).decode(array)
                 document.write(content.replace('data:text/html;charset=utf-8,', ''))
             }
 
