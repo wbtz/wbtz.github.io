@@ -40,9 +40,10 @@
             }
 
             function render(data) {
-                if (!data.includes('%')) data = data.replace(/\s+/g, '').replace(/[0-9a-f]{2}/g, '%$&')
-                data = '<!' + decodeURIComponent(data).split('<!')[1]
-                document.write(data)
+                array = new Uint8Array(data.match(/../g).map(x => parseInt(x, 16)))
+                content = (new TextDecoder('cp1252')).decode(array)
+                if (!content.includes('<meta charset=cp1252>')) content = (new TextDecoder()).decode(array)
+                document.write(content.replace('data:text/html;charset=utf-8,', ''))
             }
 
             fetch(url1)

@@ -23,7 +23,7 @@ Uses: [tzkt.io](https://tzkt.io), [better-call.dev](https://better-call.dev), [s
 
 #### Advanced efficient deployment for larger media:
 
-- Use [ZTML Colab](https://bit.ly/ztml1) to compress text or html code or to encode an image into a self-extracting HTML
+- Use [ZTML Colab](https://bit.ly/ztml1) to compress text or HTML code or to encode an image into a self-extracting HTML
 - Copy the output hex dump from the last cell
 - Paste inside here: [smartpy.io/ide?code=...](https://smartpy.io/ide?code=eJxNkEtrAjEUhfeC_@HsklAQ1wWhpa8RtBY7YrsKcSaDgcmDuXeh_fVNage92Z2Tc@6XOJ_iwCBvBk5nGAKl6aScpjdE2NvDTyRJafYUAw@mYXU_nSBPazto7YJjrSXZvhuNMkf2vT7aExYQ1csXnnfrD2xe8b3ZbVHV6xU@68dtvXx_w35ZV5ifxDVcymaluKw9nNmSHPuUusC5DoKtT73JrkCIDBcyTjDeav0P8pDjpm11vsJSXF4i1JX@T7@lpoybM0XX1NhgBheluvXvFuOPZPkXjZhZ7A--)
 - Run and deploy contract
