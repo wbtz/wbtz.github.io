@@ -44,6 +44,7 @@
                 var content = (new TextDecoder('cp1252')).decode(array)
                 if (!content.toLowerCase().includes('<meta charset=cp1252>')) content = (new TextDecoder()).decode(array)
                 document.write(content.replace('data:text/html;charset=utf-8,', ''))
+                document.close()
             }
 
             fetch(url1)

@@ -21,11 +21,11 @@ Uses: [tzkt.io](https://tzkt.io), [better-call.dev](https://better-call.dev), [s
 - Minify your code (e.g. reduce whitespace) to save money
 - Run and deploy contract
 
-#### Advanced efficient deployment for larger media:
+#### Advanced efficient deployment for larger content:
 
 - Use [ZTML Colab](https://bit.ly/ztml1) to compress text or HTML code or to encode an image into a self-extracting HTML
 - Copy the output hex dump from the last cell
-- Paste inside here: [smartpy.io/ide?code=...](https://smartpy.io/ide?code=eJxNkEtrAjEUhfeC_@HsklAQ1wWhpa8RtBY7YrsKcSaDgcmDuXeh_fVNage92Z2Tc@6XOJ_iwCBvBk5nGAKl6aScpjdE2NvDTyRJafYUAw@mYXU_nSBPazto7YJjrSXZvhuNMkf2vT7aExYQ1csXnnfrD2xe8b3ZbVHV6xU@68dtvXx_w35ZV5ifxDVcymaluKw9nNmSHPuUusC5DoKtT73JrkCIDBcyTjDeav0P8pDjpm11vsJSXF4i1JX@T7@lpoybM0XX1NhgBheluvXvFuOPZPkXjZhZ7A--)
+- Paste inside here: [smartpy.io/ide?code=...](https://smartpy.io/ide?code=eJxNkE1rAkEMhu@C_yG3maGw9FwQLP1aoVaxK7anMO7O4sDOB5Mc1F_vTO2iye1N8uZJrIshMZDTieMJNAHF6aRkO2gi2Jn9OZCkWL0Ez0m3rJ6mE8jRmR4QrbeMKMkM_VgocWA34MEcYQaifvuB1@1yDat3@F1tN1A3y0_4bp43zeLrA3aLpobHo7gNF7OqGJe1@xMbkqNfRZxslEqpK6TtQbBxcdC5S4APDNZnLK@dQfwHmmcb3XWYW1iK60VC3a740@_pKWPnmaIjtcbrZINU9_WH2fiZLF8AtjZcnQ--)
 - Run and deploy contract
 
 Note: website size is currently limited to 32 kB
