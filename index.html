@@ -6,60 +6,69 @@
         <title>WEBZOS</title>
         <link rel="icon" type="image/svg+xml" href="favicon.svg">
         <style>
-            body {
-                margin: 0;
-            }
             @keyframes rotate {
-                from {transform: rotate(180deg);}
-                to {transform: rotate(360deg);}
+                from {transform: rotate(180deg)}
+                to {transform: rotate(360deg)}
             }
         </style>
     </head>
     <body>
         <script>
-            var addr = (location.search || location.hash).slice(1).split(/[^\da-z]/i)[0]
-            var url1 = 'https://api.tzkt.io/v1/contracts/' + addr + '/storage'
-            var url2 = 'https://api.better-call.dev/v1/contract/mainnet/' + addr + '/storage/raw'
+            addr = (location.search || location.hash).slice(1).split(/[^\da-z]/i)[0]
+            url1 = 'https://api.tzkt.io/v1/contracts/' + addr + '/storage'
+            url2 = 'https://api.better-call.dev/v1/contract/mainnet/' + addr + '/storage/raw'
+
+            function render(data) {
+                bytes = Uint8Array.from(data.match(/../g), x => parseInt(x, 16))
+                preamble = (new TextDecoder).decode(bytes.slice(0, 1000))
+                dom = (new DOMParser).parseFromString(preamble, 'text/html')
+                encoding = dom.getElementsByTagName('meta')[0]?.getAttribute('charset')
+                content = (new TextDecoder(encoding)).decode(bytes)
+                content = content.replace(/^data:text\/html;charset=utf-8,/, '')  // Deal with my legacy prefix
+                document.write(content)
+                document.close()  // Needed to ensure that any style changes added after a script are applied
+            }
 
             function help() {
-                const help = document.createElement('div')
                 fetch('https://raw.githubusercontent.com/wbtz/wbtz.github.io/main/README.md')
                     .then(response => response.text())
                     .then(text => {
+                        readme = text
                         fetch('https://api.github.com/markdown', {
                             method: 'POST',
-                            headers: {'Content-Type': 'application/json'},
-                            body: JSON.stringify({text: text})
+                            body: JSON.stringify({text: readme})
                         })
-                        .then(response => response.text()).then(text => {
-                            document.body.innerHTML = text
-                            document.body.style.margin = '2rem'
-                            document.body.style.animation = 'rotate 0.5s'
-                        })
+                            .then(response => {
+                                if (!response.ok) throw 'Error0'
+                                return response.text()
+                            })
+                            .then(text => readme = text)
+                            .catch(() => document.body.style.whiteSpace = 'pre')
+                            .finally(() => {
+                                with(document.body) {
+                                    style.fontFamily = 'system-ui,-apple-system,Segoe UI,Roboto,Helvetica Neue,Noto Sans,Liberation Sans,Arial,sans-serif'
+                                    style.margin = '2em'
+                                    innerHTML = readme
+                                    style.animation = 'rotate 0.5s'
+                                }
+                            })
                     })
             }
 
-            function render(data) {
-                var array = new Uint8Array(data.match(/../g).map(x => parseInt(x, 16)))
-                var content = (new TextDecoder('cp1252')).decode(array)
-                if (!content.toLowerCase().includes('<meta charset=cp1252>')) content = (new TextDecoder()).decode(array)
-                document.write(content.replace('data:text/html;charset=utf-8,', ''))
-                document.close()
-            }
-
-            fetch(url1)
+            if (!addr.startsWith('KT')) help()
+            else fetch(url1)
                 .then(response => {
                     if (!response.ok) throw 'Error1'
                     return response.json()
                 })
                 .then(data => render(data))
-                .catch(e => fetch(url2)
+                .catch(() => fetch(url2)
                     .then(response => {
                         if (!response.ok) throw 'Error2'
                         return response.json()
                     })
-                    .then(data => render(data.split('"')[1]))
-                    .catch(e => help())
+                    .then(data => render(data.slice(2)))  // Discard 0x
+                    .catch(() => help())
                 )
         </script>
     </body>
