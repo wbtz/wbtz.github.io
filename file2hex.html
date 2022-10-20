@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>file2hex</title>
+    </head>
+    <body>
+        <input type="file" autocomplete="off" autofocus onchange="f=new FileReader;f.onloadend=e=>{document.getElementById('hex').textContent='0x'+(new Uint8Array(e.target.result)).map(x=>x.toString(16)).join``;b=document.getElementById('copy');b.hidden=0;b.focus()};f.readAsArrayBuffer(files[0])">
+        <p id="hex"></p>
+        <button id="copy" hidden onclick="navigator.clipboard.writeText(document.getElementById('hex').textContent)">Copy</button>
+    </body>
+</html>

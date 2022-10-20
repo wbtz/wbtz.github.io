@@ -3,7 +3,7 @@ import smartpy as sp
 
 class Webzos(sp.Contract):
     def __init__(self):
-        html_hex = 'HEX DUMP OF YOUR HTML STARTING WITH 0x'
+        html_hex = 'HEX DUMP STARTING WITH 0x'
         self.init(sp.bytes(html_hex.strip()))
 
 
