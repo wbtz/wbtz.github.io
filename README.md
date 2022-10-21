@@ -15,7 +15,7 @@ Uses: [tzkt.io](https://tzkt.io), [better-call.dev](https://better-call.dev), [s
 ### Instructions
 
 #### Simple deployment:
-- Edit HTML here: [smartpy.io/ide?code=...](https://smartpy.io/ide?code=eJxNUEFugzAQvCPxh@3JoEr0WlUhqkqp2kuoEqoovVgGTGLJ2Mi7OdDX14aiZn2wd3Zsz4waRusIcBCOxgkEAo5xFFarBSIcZfNjMcExK6whJ1pKn@IIfHWyB86VUcR5glL36yDUhQYNOTjGWBxt7l6roj59lgHd@n6eamHOuTShHyQJaC_CoaT8Sv1jAEmRlttj@fJdHTYPS@fhxnaT34tqV5e7Gqo3OFVfe_C8w0ddwnu5L@No_nbVErRlQWdwcSWlMWsmkshtz5GcMuckCMrCeUzSNF38qx4YyWHUwnMZGEugjHdsxCA5__P67J8UXcc9hRK2hMXS_4Bm_DYY9Kn4OwHn2EojnLJJeju_z9fQPfwLaWh4oA--)
+- Edit HTML here: [smartpy.io/ide?code=...](https://smartpy.io/ide?code=eJxNUEFOwzAQvEfKH5aTbSGFO2orRDCCS4PaoKpcLDdxwJJjW9nlUF6P3RDR9cU7s57ZsR1jmAhw1BPFM2gEjGWRT@c0IhzM6Scgx1jVwdOkOxL3ZQGpejOAUtZbUoqjccNC5Pqi0cEaJsZYWaxunpq6Pb7JjG5ST5ac2Rzk40ezX93NXVnUzbaV2xaaZzg27ztI_P61lfAid7IsLkqLfLarsnVe7Jusw@p0JoMqDAppsv6TZ68q3yMXQsyR7ACMzBidTrMMfCCwPoXwejRK_a3_kCR136s0QpzN@Zn4z3zBr7NiCpreZFxhZ7yebODimr9dL_@Y4F_bfGpD)
 - Media can be encoded inline as Base64 data URLs
 - Minify your code (e.g. reduce whitespace) to save money
 - Run and deploy contract
