@@ -23,8 +23,7 @@ Uses: [tzkt.io](https://tzkt.io), [better-call.dev](https://better-call.dev), [s
 #### Advanced deployment with compression:
 - Use [ZTML Colab](https://bit.ly/ztml1) to compress HTML (important: tick `raw`), or plain text 
 - Copy the output hex dump from the last cell
-- Alternatively, if you just want a stand-alone browser-supported media file, use it's raw [hex dump](https://wbtz.github.io/file2hex)  
-- Paste inside here: [smartpy.io/ide?code=...](https://smartpy.io/ide?code=eJxNkE@LAjEMxe@C3yG3tgiDZ0FQVlEPyrLO4t5Cnekwhekfmhx0P_22q4Mmt5eX119jXQyJgZxOHO@gCShOJ6WbQRPBxVx_A0mK1UfwnHTDajGdQK7WdIBovWVESWboxkGpnt2AvbnBEsR@@wOb7@MnnOv1V3047eByqPcwv4mXv@xXJau8dL2zITlGVMTJRqmUenDZDgQbFwedXQJ8YLA@k3jtDOKTYZVjdNtitrAUj08I9QL_19@BKZPmnaIjNcbrZINU7_PZcjxGlv8AOEJZJA--)
+- Paste inside here: [smartpy.io/ide?code=...](https://smartpy.io/ide?code=eJxNkE1rAkEMhu@C_yG3maGw9FwQLP1aoVaxK7anMO7O4sDOB5Mc1F_vTO2iye1N8uZJrIshMZDTieMJNAHF6aRkO2gi2Jn9OZCkWL0Ez0m3rJ6mE8jRmR4QrbeMKMkM_VgocWA34MEcYQaifvuB1@1yDat3@F1tN1A3y0_4bp43zeLrA3aLpobHo7gNF7OqGJe1@xMbkqNfRZxslEqpK6TtQbBxcdC5S4APDNZnLK@dQfwHmmcb3XWYW1iK60VC3a740@_pKWPnmaIjtcbrZINU9_WH2fiZLF8AtjZcnQ--)
 - Run and deploy contract
 
 Note: total (compressed) size is currently limited to 32 kB
