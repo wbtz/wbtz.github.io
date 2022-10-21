@@ -20,7 +20,7 @@
 
             function render(data) {
                 bytes = Uint8Array.from(data.match(/../g), x => parseInt(x, 16))
-                header = (new TextDecoder).decode(bytes.slice(0, 1000))
+                header = (new TextDecoder).decode(bytes.slice(0, 1024))
                 dom = (new DOMParser).parseFromString(header, 'text/html')
                 encoding = dom.getElementsByTagName('meta')[0]?.getAttribute('charset')
                 content = (new TextDecoder(encoding)).decode(bytes)
