@@ -5,8 +5,8 @@
         <title>file2hex</title>
     </head>
     <body>
-        <input type="file" autocomplete="off" autofocus onchange="f=new FileReader;f.onload=e=>{document.getElementById('hex').textContent='0x'+[...new Uint8Array(e.target.result)].map(i=>i.toString(16).padStart(2,0)).join``;b=document.getElementById('copy');b.hidden=0;b.focus()};f.readAsArrayBuffer(files[0])">
-        <p id="hex"></p>
-        <button id="copy" hidden onclick="navigator.clipboard.writeText(document.getElementById('hex').textContent)">Copy</button>
+        <input type="file" autocomplete="off" autofocus onchange="f=new FileReader;f.onload=e=>{h.textContent='0x'+[...new Uint8Array(f.result)].map(i=>i.toString(16).padStart(2,0)).join``;b.hidden=0,b.focus()};f.readAsArrayBuffer(files[0])">
+        <p id="h"></p>
+        <button id="b" hidden onclick="navigator.clipboard.writeText(h.textContent)">Copy</button>
     </body>
 </html>
